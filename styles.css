@@ -1,75 +1,71 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo tema vaca (preto e branco) */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://www.kindpng.com/picc/m/19-195246_vaca-animada-png-vaca-png.png');
-    background-size: cover;
-    background-repeat: no-repeat;
     text-align: center;
-    padding: 0;
-    margin: 0;
-    color: #3e3e3e;
+    background: radial-gradient(circle at 20% 20%, black 15%, white 16%),
+                radial-gradient(circle at 70% 40%, black 15%, white 16%),
+                radial-gradient(circle at 40% 70%, black 15%, white 16%),
+                white;
+    background-size: 200px 200px;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-.header {
-    margin-top: 40px;
-}
-
-.vaca-icone {
-    width: 120px;
-}
-
+/* Título */
 h1 {
-    color: #6b4f1f;
-    font-size: 2.8em;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 2.5em;
+    color: #4b2e05;
 }
 
+/* Botões */
 .button {
-    background-color: #d1b38a;
-    border: none;
+    background-color: #8b5e3c;
     color: white;
-    padding: 12px 28px;
-    font-size: 16px;
+    border: none;
+    padding: 12px 25px;
     margin: 10px;
+    font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .button:hover {
-    background-color: #c59c6e;
+    background-color: #5c3b1e;
 }
 
-.form-container {
-    margin-top: 15px;
-}
-
-input[type=text] {
+/* Inputs */
+input {
     padding: 10px;
-    font-size: 16px;
-    width: 280px;
+    width: 250px;
     border-radius: 6px;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
+    margin: 5px;
 }
 
+/* Lista */
 .list-container {
     margin-top: 25px;
 }
 
 ul {
-    list-style-type: none;
-    background: rgba(255,255,255,0.8);
+    list-style: none;
+    background-color: rgba(255,255,255,0.9);
     display: inline-block;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
 li {
-    font-size: 1.2em;
+    font-size: 18px;
     margin: 8px 0;
-}
-
-.cow-pattern {
-    width: 70%;
-    max-width: 450px;
-    opacity: 0.4;
-    margin-top: 30px;
 }
