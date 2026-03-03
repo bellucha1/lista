@@ -1,4 +1,4 @@
-// Lista de convidados com status
+// Lista de convidados com status de confirmação
 let convidados = [
     { name: "Ana", confirmed: false },
     { name: "Carlos", confirmed: true },
@@ -8,7 +8,7 @@ let convidados = [
     { name: "Marcelo", confirmed: true },
 ];
 
-// Mostra lista conforme filtro
+// Função para exibir a lista conforme o botão clicado
 function showList(type) {
     let filtered = [];
     if (type === 'all') filtered = convidados;
@@ -25,32 +25,20 @@ function showList(type) {
     document.getElementById("listContainer").innerHTML = html;
 }
 
-// Mostra/oculta formulário de adicionar
-function toggleAddForm() {
-    const f = document.getElementById("addForm");
-    f.style.display = (f.style.display === "none" ? "block" : "none");
-}
-
-// Mostra/oculta formulário de pesquisar
-function toggleSearchForm() {
-    const f = document.getElementById("searchForm");
-    f.style.display = (f.style.display === "none" ? "block" : "none");
-}
-
-// Adiciona novo convidado
+// Função para adicionar um novo convidado
 function addGuest() {
     const name = document.getElementById("newGuestName").value.trim();
     if (name) {
         convidados.push({ name: name, confirmed: false });
         alert(`Convidado "${name}" adicionado!`);
-        document.getElementById("newGuestName").value = "";
-        showList('all');
+        document.getElementById("newGuestName").value = ""; // Limpar campo de entrada
+        showList('all'); // Atualizar lista
     } else {
         alert("Digite um nome válido!");
     }
 }
 
-// Pesquisa convidado
+// Função para pesquisar um convidado
 function searchGuest() {
     const searchText = document.getElementById("searchGuestName").value.toLowerCase();
     const found = convidados.filter(g => g.name.toLowerCase().includes(searchText));
@@ -63,4 +51,16 @@ function searchGuest() {
     html += "</ul>";
 
     document.getElementById("listContainer").innerHTML = html;
+}
+
+// Função para mostrar/ocultar o formulário de adicionar convidado
+function toggleAddForm() {
+    const form = document.getElementById("addForm");
+    form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
+}
+
+// Função para mostrar/ocultar o formulário de pesquisa de convidado
+function toggleSearchForm() {
+    const form = document.getElementById("searchForm");
+    form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
 }
