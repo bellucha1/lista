@@ -1,14 +1,13 @@
-/* Reset básico */
+/* Reset de margens e padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fundo tema vaca (preto e branco) */
+/* Fundo com tema de vaca (manchas pretas e brancas) */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
     background: radial-gradient(circle at 20% 20%, black 15%, white 16%),
                 radial-gradient(circle at 70% 40%, black 15%, white 16%),
                 radial-gradient(circle at 40% 70%, black 15%, white 16%),
@@ -16,16 +15,17 @@ body {
     background-size: 200px 200px;
     min-height: 100vh;
     padding: 20px;
+    text-align: center;
 }
 
-/* Título */
+/* Estilo do título */
 h1 {
     margin-top: 20px;
     font-size: 2.5em;
     color: #4b2e05;
 }
 
-/* Botões */
+/* Estilo dos botões */
 .button {
     background-color: #8b5e3c;
     color: white;
@@ -35,14 +35,14 @@ h1 {
     font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color 0.3s;
 }
 
 .button:hover {
     background-color: #5c3b1e;
 }
 
-/* Inputs */
+/* Estilo para os campos de input */
 input {
     padding: 10px;
     width: 250px;
@@ -51,14 +51,14 @@ input {
     margin: 5px;
 }
 
-/* Lista */
+/* Container da lista de convidados */
 .list-container {
     margin-top: 25px;
 }
 
 ul {
     list-style: none;
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255, 255, 255, 0.8);
     display: inline-block;
     padding: 20px;
     border-radius: 10px;
@@ -68,4 +68,17 @@ ul {
 li {
     font-size: 18px;
     margin: 8px 0;
+}
+
+/* Formulários */
+.form-container {
+    margin-top: 15px;
+}
+
+/* Estilo de imagens de fundo e padrões de vaca */
+.cow-pattern {
+    width: 70%;
+    max-width: 450px;
+    opacity: 0.4;
+    margin-top: 30px;
 }
