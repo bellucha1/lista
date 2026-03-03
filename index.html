@@ -10,8 +10,8 @@
 <body>
     <div class="header">
         <!-- Imagem de vaca no topo (substitua com a URL correta) -->
-        <img src="https://img.freepik.com/vetores-premium/elemento-grafico-de-vaca-bebe_651794-996.jpg" alt="Vaca" class="vaca-icone">
-        <h1>Bem-vindo ao Evento!</h1>
+        <img src="https://www.pngitem.com/pimgs/m/84-847125_vaca-vaca-vaca-cartoon-png-transparent-png.png" alt="Vaca" class="vaca-icone">
+        <h1>Bem-vindo ao Evento - Tema Vaca!</h1>
     </div>
 
     <!-- Botões -->
@@ -19,8 +19,27 @@
     <button class="button" onclick="showList('a')">Nomes Começando com A</button>
     <button class="button" onclick="showList('long')">Nomes com Mais de 5 Letras</button>
 
+    <!-- Novo Botões para Adicionar e Pesquisar -->
+    <button class="button" onclick="toggleAddForm()">Adicionar Convidado</button>
+    <button class="button" onclick="toggleSearchForm()">Pesquisar Convidado</button>
+
+    <!-- Formulário de Adicionar Convidado -->
+    <div id="addForm" class="form-container" style="display:none;">
+        <input type="text" id="newGuestName" placeholder="Nome do Convidado">
+        <button class="button" onclick="addGuest()">Adicionar</button>
+        <button class="button" onclick="toggleAddForm()">Cancelar</button>
+    </div>
+
+    <!-- Formulário de Pesquisar Convidado -->
+    <div id="searchForm" class="form-container" style="display:none;">
+        <input type="text" id="searchGuestName" placeholder="Nome para pesquisa">
+        <button class="button" onclick="searchGuest()">Pesquisar</button>
+        <button class="button" onclick="toggleSearchForm()">Cancelar</button>
+    </div>
+
     <!-- Elementos gráficos adicionais -->
     <div class="cow-decor">
+        <img src="https://www.kindpng.com/picc/m/76-763509_cow-pattern-png-transparent-png.png" alt="Padrão de Vaca" class="cow-pattern">
     </div>
 
     <!-- Container para exibir as listas -->
