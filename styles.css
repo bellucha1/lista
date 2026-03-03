@@ -2,22 +2,24 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f7f3f0; /* Cor de fundo suave */
     color: #3e3e3e;
-    background-image: url('https://www.example.com/cow-background.jpg'); /* Imagem de fundo com tema de vaca */
+    background-image: url('https://www.kindpng.com/picc/m/19-195246_vaca-animada-png-vaca-png.png'); /* Imagem de fundo com tema de vaca */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
     position: relative;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .vaca-icone {
-    width: 100px; /* Imagem de vaca no topo */
+    width: 120px; /* Imagem de vaca no topo */
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 h1 {
