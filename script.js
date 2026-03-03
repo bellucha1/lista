@@ -1,26 +1,59 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de Convidados</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS -->
-</head>
-<body>
-    <h1>Bem-vindo ao Gerenciador de Convidados</h1>
-    
-    <div class="container">
-        <button onclick="showConvidados()">Lista de Convidados</button>
-        <button onclick="showNomesA()">Nomes que começam com A</button>
-        <button onclick="showNomesMaiorQueCinco()">Nomes com mais de 5 letras</button>
-        <button onclick="adicionarConvidado()">Adicionar Convidados</button>
-        <button onclick="confirmacaoConvidados()">Visualizar Confirmação</button>
-        <button onclick="pesquisarConvidados()">Pesquisar Convidados</button>
-        <button onclick="filtroOrdemAlfabetica()">Filtro por Ordem Alfabetica</button>
-        <button onclick="informacoesEvento()">Informações sobre o Evento</button>
-        <button onclick="nomesMaiusculos()">Nomes em Maiúsculo</button>
-    </div>
+// Lista de convidados (simulada)
+let convidados = [
+    "Ana", "Lucas", "Beatriz", "Carlos", "Amanda", "Rafael", "Juliana", "Gabriel", "Paula", "Eduardo"
+];
 
-    <script src="script.js"></script> <!-- Link para o arquivo JavaScript -->
-</body>
-</html>
+// Função para mostrar todos os convidados
+function showConvidados() {
+    alert("Lista de Convidados: " + convidados.join(", "));
+}
+
+// Função para mostrar nomes que começam com "A"
+function showNomesA() {
+    let nomesA = convidados.filter(nome => nome.startsWith('A'));
+    alert("Convidados que começam com A: " + nomesA.join(", "));
+}
+
+// Função para mostrar nomes com mais de 5 letras
+function showNomesMaiorQueCinco() {
+    let nomesMaiorQueCinco = convidados.filter(nome => nome.length > 5);
+    alert("Convidados com mais de 5 letras: " + nomesMaiorQueCinco.join(", "));
+}
+
+// Função para adicionar um novo convidado
+function adicionarConvidado() {
+    let nome = prompt("Digite o nome do convidado a ser adicionado:");
+    if (nome) {
+        convidados.push(nome);
+        alert("Convidado adicionado: " + nome);
+    }
+}
+
+// Função para mostrar a confirmação dos convidados
+function confirmacaoConvidados() {
+    alert("Confirmação de presença ainda não implementada.");
+}
+
+// Função para pesquisar um convidado
+function pesquisarConvidados() {
+    let pesquisa = prompt("Digite o nome do convidado para pesquisar:");
+    let resultado = convidados.filter(nome => nome.toLowerCase().includes(pesquisa.toLowerCase()));
+    alert("Resultado da pesquisa: " + resultado.join(", "));
+}
+
+// Função para ordenar a lista de convidados por ordem alfabética
+function filtroOrdemAlfabetica() {
+    let ordemAlfabetica = [...convidados].sort();
+    alert("Convidados em ordem alfabética: " + ordemAlfabetica.join(", "));
+}
+
+// Função para exibir informações sobre o evento
+function informacoesEvento() {
+    alert("Evento: Festa de Aniversário\nData: 15 de Abril de 2026\nLocal: Salão de Eventos");
+}
+
+// Função para mostrar os nomes dos convidados em maiúsculas
+function nomesMaiusculos() {
+    let nomesMaiusculos = convidados.map(nome => nome.toUpperCase());
+    alert("Convidados em maiúsculas: " + nomesMaiusculos.join(", "));
+}
