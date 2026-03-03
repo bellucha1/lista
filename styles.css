@@ -74,3 +74,24 @@ li {
     font-size: 1.2em;
     margin: 10px 0;
 }
+
+.form-container {
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    margin: 5px;
+    width: 300px;
+    border-radius: 8px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border: 2px solid #6b4f1f;
+}
+
+button {
+    margin-top: 10px;
+}
