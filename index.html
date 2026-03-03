@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Convidados!</title>
+    <title>Lista de Convidados - Tema Vaca</title>
     <!-- Linkando o CSS externo -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Bem-vindo ao Evento!</h1>
+    <div class="header">
+        <!-- Imagem de vaca no topo -->
+        <img src="https://example.com/vaca-icone.png" alt="Vaca" class="vaca-icone">
+        <h1>Bem-vindo ao Evento - Tema Vaca!</h1>
+    </div>
 
     <!-- Botões -->
     <button class="button" onclick="showList('all')">Lista de Convidados</button>
     <button class="button" onclick="showList('a')">Nomes Começando com A</button>
     <button class="button" onclick="showList('long')">Nomes com Mais de 5 Letras</button>
+
+    <!-- Elementos gráficos adicionais -->
+    <div class="cow-decor">
+        <img src="https://example.com/cow-pattern2.png" alt="Padrão de Vaca" class="cow-pattern">
+    </div>
 
     <!-- Container para exibir as listas -->
     <div class="list-container" id="listContainer"></div>
