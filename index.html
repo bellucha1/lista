@@ -3,55 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Convidados</title>
-    <style>
-        body {
-            background-color: #6B3C26; /* Cor marrom */
-            font-family: Arial, sans-serif;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        h1 {
-            color: #FFD700; /* Amarelo para o título */
-        }
-        button {
-            background-color: #8B4513; /* Marrom mais claro */
-            color: white;
-            border: none;
-            padding: 15px;
-            margin: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #D2691E; /* Marrom mais vibrante ao passar o mouse */
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .container button {
-            width: 250px;
-        }
-    </style>
+    <title>Gerenciador de Convidados</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS -->
 </head>
 <body>
     <h1>Bem-vindo ao Gerenciador de Convidados</h1>
     
     <div class="container">
-        <button onclick="window.location.href='convidados.html'">Lista de Convidados</button>
-        <button onclick="window.location.href='nomesA.html'">Nomes que começam com A</button>
-        <button onclick="window.location.href='nomesMaiorQueCinco.html'">Nomes com mais de 5 letras</button>
-        <button onclick="window.location.href='adicionarConvidados.html'">Adicionar Convidados</button>
-        <button onclick="window.location.href='confirmacaoConvidados.html'">Visualizar Confirmação</button>
-        <button onclick="window.location.href='pesquisarConvidados.html'">Pesquisar Convidados</button>
-        <button onclick="window.location.href='filtroOrdemAlfabetica.html'">Filtro por Ordem Alfabetica</button>
-        <button onclick="window.location.href='informacoesEvento.html'">Informações sobre o Evento</button>
-        <button onclick="window.location.href='nomesMaiusculos.html'">Nomes em Maiúsculo</button>
+        <button onclick="showConvidados()">Lista de Convidados</button>
+        <button onclick="showNomesA()">Nomes que começam com A</button>
+        <button onclick="showNomesMaiorQueCinco()">Nomes com mais de 5 letras</button>
+        <button onclick="adicionarConvidado()">Adicionar Convidados</button>
+        <button onclick="confirmacaoConvidados()">Visualizar Confirmação</button>
+        <button onclick="pesquisarConvidados()">Pesquisar Convidados</button>
+        <button onclick="filtroOrdemAlfabetica()">Filtro por Ordem Alfabetica</button>
+        <button onclick="informacoesEvento()">Informações sobre o Evento</button>
+        <button onclick="nomesMaiusculos()">Nomes em Maiúsculo</button>
     </div>
 
+    <script src="script.js"></script> <!-- Link para o arquivo JavaScript -->
 </body>
 </html>
