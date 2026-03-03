@@ -1,1 +1,84 @@
+/* Paleta de Marrons */
+:root {
+    --marrom-escuro: #3e2723;
+    --marrom-medio: #5d4037;
+    --marrom-claro: #8d6e63;
+    --bege-fundo: #efebe9;
+    --dourado-suave: #d7ccc8;
+}
 
+body {
+    background-color: var(--marrom-escuro);
+    color: var(--bege-fundo);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--marrom-medio);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+header h1 {
+    text-align: center;
+    color: var(--dourado-suave);
+    margin-bottom: 5px;
+}
+
+header p { text-align: center; margin-bottom: 25px; font-style: italic; }
+
+.grid-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: var(--marrom-claro);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 15px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #a1887f;
+    transform: translateY(-2px);
+}
+
+#app-content {
+    background-color: var(--bege-fundo);
+    color: var(--marrom-escuro);
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 200px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--marrom-claro);
+    border-radius: 5px;
+}
+
+ul { list-style: none; padding: 0; }
+li {
+    padding: 10px;
+    border-bottom: 1px solid var(--dourado-suave);
+    display: flex;
+    justify-content: space-between;
+}
+
+.placeholder { text-align: center; color: #777; margin-top: 50px; }
