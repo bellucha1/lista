@@ -6,19 +6,26 @@ let convidados = [
     { name: "Alessandra", confirmed: true },
     { name: "Paula", confirmed: false },
     { name: "Marcelo", confirmed: true },
+    { name: "Amanda", confirmed: true },
+    { name: "Bruna", confirmed: false },
+    { name: "Lucas", confirmed: true }
 ];
 
 // Função para exibir a lista conforme o botão clicado
 function showList(type) {
-    let filtered = [];
-    if (type === 'all') filtered = convidados;
-    if (type === 'a') filtered = convidados.filter(g => g.name.toLowerCase().startsWith('a'));
-    if (type === 'long') filtered = convidados.filter(g => g.name.length > 5);
+    let filteredList = [];
+    if (type === 'all') {
+        filteredList = convidados;
+    } else if (type === 'a') {
+        filteredList = convidados.filter(c => c.name.toLowerCase().startsWith('a'));
+    } else if (type === 'long') {
+        filteredList = convidados.filter(c => c.name.length > 5);
+    }
 
     let html = "<ul>";
-    if (filtered.length === 0) html += "<li>Nenhum convidado encontrado</li>";
-    filtered.forEach(g => {
-        html += `<li>${g.name} - <strong>${g.confirmed ? "Confirmado" : "Não Confirmado"}</strong></li>`;
+    filteredList.forEach(c => {
+        const status = c.confirmed ? "Confirmado" : "Não Confirmado";
+        html += `<li>${c.name} - <strong>${status}</strong></li>`;
     });
     html += "</ul>";
 
@@ -30,9 +37,9 @@ function addGuest() {
     const name = document.getElementById("newGuestName").value.trim();
     if (name) {
         convidados.push({ name: name, confirmed: false });
-        alert(`Convidado "${name}" adicionado!`);
-        document.getElementById("newGuestName").value = ""; // Limpar campo de entrada
-        showList('all'); // Atualizar lista
+        alert(`${name} adicionado como convidado!`);
+        document.getElementById("newGuestName").value = "";
+        toggleAddForm();
     } else {
         alert("Digite um nome válido!");
     }
@@ -40,27 +47,18 @@ function addGuest() {
 
 // Função para pesquisar um convidado
 function searchGuest() {
-    const searchText = document.getElementById("searchGuestName").value.trim().toLowerCase();
-    const found = convidados.filter(g => g.name.toLowerCase().includes(searchText));
+    const searchName = document.getElementById("searchGuestName").value.trim().toLowerCase();
+    const result = convidados.filter(c => c.name.toLowerCase().includes(searchName));
 
     let html = "<ul>";
-    if (found.length === 0) html += "<li>Convidado não encontrado</li>";
-    found.forEach(g => {
-        html += `<li>${g.name} - <strong>${g.confirmed ? "Confirmado" : "Não Confirmado"}</strong></li>`;
-    });
+    if (result.length > 0) {
+        result.forEach(c => {
+            const status = c.confirmed ? "Confirmado" : "Não Confirmado";
+            html += `<li>${c.name} - <strong>${status}</strong></li>`;
+        });
+    } else {
+        html += "<li>Convidado não encontrado.</li>";
+    }
     html += "</ul>";
-
-    document.getElementById("listContainer").innerHTML = html;
-}
-
-// Função para mostrar/ocultar o formulário de adicionar convidado
-function toggleAddForm() {
-    const form = document.getElementById("addForm");
-    form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
-}
-
-// Função para mostrar/ocultar o formulário de pesquisa de convidado
-function toggleSearchForm() {
-    const form = document.getElementById("searchForm");
-    form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
-}
+    document.getElementById("listContainer").inner
+    
