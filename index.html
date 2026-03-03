@@ -3,37 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestão de Evento Elegante</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Gerenciador de Convidados</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            background-color: #6B3C26; /* Cor marrom */
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #FFD700; /* Amarelo para o título */
+            margin-bottom: 40px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #8B4513; /* Marrom mais claro */
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            width: 250px;
+        }
+
+        button:hover {
+            background-color: #D2691E; /* Marrom mais vibrante ao passar o mouse */
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* Tabela de convidados */
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #fff;
+        }
+
+        table th {
+            background-color: #8B4513;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #3E2A47;
+        }
+
+        table tr:hover {
+            background-color: #D2691E;
+        }
+
+        /* Formulário de Adição de Convidado */
+        .form-container {
+            margin: 20px 0;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .add-btn {
+            background-color: #FFD700;
+            color: black;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 12px 20px;
+        }
+
+        .add-btn:hover {
+            background-color: #FFA500;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Painel de Convidados</h1>
-            <p>Evento Exclusivo</p>
-        </header>
-
-        <nav class="grid-menu">
-            <button onclick="gerenciador.listarTodos()">1. Lista Geral</button>
-            <button onclick="gerenciador.filtrarLetraA()">2. Nomes com 'A'</button>
-            <button onclick="gerenciador.filtrarMaisDe5()">3. +5 Letras</button>
-            <button onclick="gerenciador.exibirFormulario()">4. Adicionar</button>
-            <button onclick="gerenciador.verConfirmados()">5. Confirmados</button>
-            <button onclick="gerenciador.exibirPesquisa()">6. Pesquisar</button>
-            <button onclick="gerenciador.exibirFiltros()">7. Ordenação</button>
-            <button onclick="gerenciador.infoEvento()">8. Informações</button>
-            <button onclick="gerenciador.maiusculas()">9. MAIÚSCULAS</button>
-        </nav>
-
-        <main id="app-content">
-            <div id="controles"></div>
-            <div id="lista-exibicao">
-                <p class="placeholder">Selecione uma opção no menu acima.</p>
-            </div>
-        </main>
+    <h1>Gerenciador de Convidados</h1>
+    
+    <!-- Botões para filtros -->
+    <div class="button-container">
+        <button onclick="showConvidados()">Mostrar Todos os Convidados</button>
+        <button onclick="showNomesA()">Nomes que começam com A</button>
+        <button onclick="showNomesMaiorQueCinco()">Nomes com mais de 5 letras</button>
+        <button onclick="filtroOrdemAlfabetica()">Ordem Alfabética</button>
+        <button onclick="nomesMaiusculos()">Nomes em Maiúsculo</button>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Formulário de Adição de Convidado -->
+    <div class="form-container">
+        <input type="text" id="novoConvidado" placeholder="Digite o nome do convidado">
+        <button class="add-btn" onclick="adicionarConvidado()">Adicionar Convidado</button>
+    </div>
+
+    <!-- Tabela de Convidados -->
+    <table id="convidadosTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        // Lista inicial de convidados
+        let convidados = [
+            "Ana", "Lucas", "Beatriz", "Carlos", "Amanda", "Rafael", "Juliana", "Gabriel", "Paula", "Eduardo"
+        ];
+
+        // Função para mostrar todos os convidados
+        function showConvidados() {
+            const tableBody = document.querySelector('#convidadosTable tbody');
+            tableBody.innerHTML = ''; // Limpa a tabela antes de preenchê-la
+
+            convidados.forEach((convidado, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${index + 1}</td><td>${convidado}</td>`;
+                tableBody.appendChild(row);
+            });
+
+            document.getElementById('convidadosTable').style.display = 'table';
+        }
+
+        // Função para mostrar nomes que começam com "A"
+        function showNomesA() {
+            const nomesA = convidados.filter(nome => nome.startsWith('A'));
+            mostrarTabelaFiltrada(nomesA);
+        }
+
+        // Função para mostrar nomes com mais de 5 letras
+        function showNomesMaiorQueCinco() {
+            const nomesMaiorQueCinco = convidados.filter(nome => nome.length > 5);
+            mostrarTabelaFiltrada(nomesMaiorQueCinco);
+        }
+
+        // Função para ordenar os convidados em ordem alfabética
+        function filtroOrdemAlfabetica() {
+            const ordemAlfabetica = [...convidados].sort();
+            mostrarTabelaFiltrada(ordemAlfabetica);
+        }
+
+        // Função para mostrar convidados em maiúsculas
+        function nomesMaiusculos() {
+            const nomesMaiusculos = convidados.map(nome => nome.toUpperCase());
+            mostrarTabelaFiltrada(nomesMaiusculos);
+        }
+
+        // Função para mostrar uma lista filtrada na tabela
+        function mostrarTabelaFiltrada(lista) {
+            const tableBody = document.querySelector('#convidadosTable tbody');
+            tableBody.innerHTML = ''; // Limpa a tabela antes de preenchê-la
+
+            lista.forEach((convidado, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${index + 1}</td><td>${convidado}</td>`;
+                tableBody.appendChild(row);
+            });
+
+            document.getElementById('convidadosTable').style.display = 'table';
+        }
+
+        // Função para adicionar um novo convidado
+        function adicionarConvidado() {
+            const nome = document.getElementById('novoConvidado').value.trim();
+
+            if (nome) {
+                convidados.push(nome);
+                alert("Convidado adicionado: " + nome);
+                document.getElementById('novoConvidado').value = ''; // Limpa o campo de input
+                showConvidados(); // Atualiza a lista de convidados
+            } else {
+                alert("Por favor, insira um nome válido.");
+            }
+        }
+    </script>
+
 </body>
 </html>
