@@ -2,17 +2,28 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f7f3f0; /* Cor de fundo suave */
     color: #3e3e3e;
-    background-image: url('https://www.example.com/cow-pattern.jpg'); /* Substitua por uma imagem de vaca real */
+    background-image: url('https://www.example.com/cow-background.jpg'); /* Imagem de fundo com tema de vaca */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
+    position: relative;
+}
+
+.header {
+    margin-top: 30px;
+}
+
+.vaca-icone {
+    width: 100px; /* Imagem de vaca no topo */
+    height: auto;
+    margin-bottom: 10px;
 }
 
 h1 {
     color: #6b4f1f; /* Cor marrom de vaca */
     font-size: 3em;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .button {
@@ -31,6 +42,17 @@ h1 {
 
 .button:hover {
     background-color: #c59c6e;
+}
+
+.cow-decor {
+    margin-top: 40px;
+}
+
+.cow-pattern {
+    width: 80%;
+    max-width: 500px;
+    margin-top: 20px;
+    opacity: 0.5;
 }
 
 .list-container {
