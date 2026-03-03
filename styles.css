@@ -1,97 +1,75 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f7f3f0; /* Cor de fundo suave */
-    color: #3e3e3e;
-    background-image: url('https://www.shutterstock.com/image-vector/cartoon-illustration-brown-cow-lying-260nw-2693127601.jpg')
+    background-image: url('https://www.kindpng.com/picc/m/19-195246_vaca-animada-png-vaca-png.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
     text-align: center;
-    position: relative;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    color: #3e3e3e;
 }
 
 .header {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .vaca-icone {
-    width: 120px; /* Imagem de vaca no topo */
-    height: auto;
-    margin-bottom: 20px;
+    width: 120px;
 }
 
 h1 {
-    color: #6b4f1f; /* Cor marrom de vaca */
-    font-size: 3em;
-    margin-top: 10px;
+    color: #6b4f1f;
+    font-size: 2.8em;
+    margin-bottom: 10px;
 }
 
 .button {
-    background-color: #d1b38a; /* Cor do botão */
+    background-color: #d1b38a;
     border: none;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    padding: 12px 28px;
     font-size: 16px;
-    margin: 20px;
-    cursor: pointer;
+    margin: 10px;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .button:hover {
     background-color: #c59c6e;
 }
 
-.cow-decor {
-    margin-top: 40px;
+.form-container {
+    margin-top: 15px;
 }
 
-.cow-pattern {
-    width: 80%;
-    max-width: 500px;
-    margin-top: 20px;
-    opacity: 0.5;
+input[type=text] {
+    padding: 10px;
+    font-size: 16px;
+    width: 280px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
 }
 
 .list-container {
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
-ol, ul {
+ul {
+    list-style-type: none;
+    background: rgba(255,255,255,0.8);
     display: inline-block;
-    text-align: left;
-    background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
 }
 
 li {
     font-size: 1.2em;
-    margin: 10px 0;
+    margin: 8px 0;
 }
 
-.form-container {
-    margin-top: 20px;
-}
-
-input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    margin: 5px;
-    width: 300px;
-    border-radius: 8px;
-}
-
-input[type="text"]:focus {
-    outline: none;
-    border: 2px solid #6b4f1f;
-}
-
-button {
-    margin-top: 10px;
+.cow-pattern {
+    width: 70%;
+    max-width: 450px;
+    opacity: 0.4;
+    margin-top: 30px;
 }
