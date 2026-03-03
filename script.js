@@ -40,7 +40,7 @@ function addGuest() {
 
 // Função para pesquisar um convidado
 function searchGuest() {
-    const searchText = document.getElementById("searchGuestName").value.toLowerCase();
+    const searchText = document.getElementById("searchGuestName").value.trim().toLowerCase();
     const found = convidados.filter(g => g.name.toLowerCase().includes(searchText));
 
     let html = "<ul>";
