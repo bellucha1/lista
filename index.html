@@ -138,6 +138,12 @@
         <button onclick="nomesMaiusculos()">Nomes em Maiúsculo</button>
     </div>
 
+    <!-- Formulário de Pesquisa -->
+    <div class="form-container">
+        <input type="text" id="pesquisaConvidado" placeholder="Pesquisar por nome...">
+        <button class="add-btn" onclick="pesquisarConvidado()">Pesquisar</button>
+    </div>
+
     <!-- Formulário de Adição de Convidado -->
     <div class="form-container">
         <input type="text" id="novoConvidado" placeholder="Digite o nome do convidado">
@@ -228,7 +234,14 @@
                 alert("Por favor, insira um nome válido.");
             }
         }
-    </script>
 
-</body>
-</html>
+        // Função para pesquisar convidados por nome
+        function pesquisarConvidado() {
+            const pesquisa = document.getElementById('pesquisaConvidado').value.trim().toLowerCase();
+            if (pesquisa === '') {
+                alert("Por favor, digite o nome para pesquisar.");
+                return;
+            }
+
+            const resultado = convidados.filter(nome => nome.toLowerCase().includes(pesquisa));
+            if (resultado.length > 0)
