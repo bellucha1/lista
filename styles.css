@@ -1,89 +1,39 @@
-/* Reset e base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Estilos gerais */
 body {
-    background-color: #4E2C1D; /* Marrom de fundo */
-    color: white;
+    background-color: #6B3C26; /* Cor marrom */
     font-family: Arial, sans-serif;
+    color: white;
     text-align: center;
     padding: 20px;
 }
 
-/* Cabeçalho */
-.header h1 {
-    margin: 20px;
-    font-size: 2.5em;
-    color: #fff;
+h1 {
+    color: #FFD700; /* Amarelo para o título */
 }
 
 /* Estilo dos botões */
-.button {
-    background-color: #8b5e3c;
+button {
+    background-color: #8B4513; /* Marrom mais claro */
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 15px;
     margin: 10px;
     font-size: 16px;
-    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
 }
 
-.button:hover {
-    background-color: #5c3b1e;
+button:hover {
+    background-color: #D2691E; /* Marrom mais vibrante ao passar o mouse */
 }
 
-/* Formulários */
-.form-container {
-    margin-top: 20px;
+/* Contêiner para os botões */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-input[type="text"], select {
-    padding: 10px;
-    font-size: 16px;
-    margin: 5px;
+.container button {
     width: 250px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
-
-input[type="text"]:focus, select:focus {
-    outline: none;
-    border-color: #8b5e3c;
-}
-
-/* Lista de Convidados */
-.list-container {
-    margin-top: 20px;
-}
-
-ul {
-    list-style: none;
-    background-color: rgba(255, 255, 255, 0.7);
-    display: inline-block;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-li {
-    font-size: 1.5em;
-    margin: 8px 0;
-}
-
-/* Informações do Evento */
-.info-container {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-}
-
-/* Container para botões */
-.buttons-container {
-    margin-top: 20px;
 }
